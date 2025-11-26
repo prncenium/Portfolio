@@ -25,10 +25,10 @@
             font-family: 'Inter', sans-serif;
             color: #f0f0f0;
             background: #000;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
         }
 
-        /* Animated gradient background */
+        /* Background Gradient */
         body::before {
             content: '';
             position: fixed;
@@ -37,20 +37,12 @@
             width: 100%;
             height: 100%;
             z-index: -2;
-            /* === CHANGED: Static, unique color gradient === */
             background: radial-gradient(
                 ellipse at bottom right, 
-                #0a3a4a 0%, /* Unique Cyan/Teal */
-                #02101a 50%, /* Dark Blue */
+                #0a3a4a 0%, 
+                #02101a 50%, 
                 #000000 100%
             );
-            /* === REMOVED: Animation === */
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         /* 3D Canvas */
@@ -63,18 +55,17 @@
             z-index: -1;
         }
 
-        /* Glassmorphism Panel Class */
+        /* Glassmorphism */
         .glass-panel {
             background: rgba(30, 30, 45, 0.25);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-radius: 1.5rem; /* rounded-3xl */
+            border-radius: 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             transition: all 0.3s ease;
         }
 
-        /* Glassmorphism Navbar */
         .glass-nav {
             background: rgba(20, 20, 30, 0.4);
             backdrop-filter: blur(15px) saturate(150%);
@@ -82,14 +73,14 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* Nav link styles */
+        /* Nav Links */
         .nav-link {
             position: relative;
             color: #a0a0b0;
             font-weight: 500;
             transition: color 0.3s;
             padding: 8px 0;
-            cursor: pointer; /* Added cursor */
+            cursor: pointer;
         }
         .nav-link:hover {
             color: #ffffff;
@@ -101,8 +92,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            /* === CHANGED: Accent color to cyan === */
-            background-color: #22d3ee; /* A subtle cyan */
+            background-color: #22d3ee;
             transform: scaleX(0);
             transform-origin: bottom right;
             transition: transform 0.3s ease-out;
@@ -117,10 +107,9 @@
             font-weight: 600;
         }
 
-        /* Section minimum height for better scrolling */
         section {
             min-height: 80vh;
-            padding-top: 100px; /* Offset for fixed nav */
+            padding-top: 100px;
             padding-bottom: 50px;
         }
         #home {
@@ -128,46 +117,92 @@
             padding-top: 0;
         }
         
-        /* Glass button */
+        /* Buttons */
         .glass-button {
-            /* === CHANGED: Accent color to cyan === */
-            background: rgba(34, 211, 238, 0.2); /* Cyan tint */
+            background: rgba(34, 211, 238, 0.2);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(34, 211, 238, 0.5);
             color: #a5f3fc;
             font-weight: 500;
             transition: all 0.3s ease;
-            cursor: pointer; /* Added cursor */
-            /* REMOVED: transform: translateZ(0); */
+            cursor: pointer;
         }
         .glass-button:hover {
-            /* === CHANGED: Accent color to cyan === */
             background: rgba(34, 211, 238, 0.4);
             box-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
             transform: translateY(-2px);
             color: #fff;
         }
         
-        /* Skill tag style */
+        .solid-button {
+            background: #22d3ee;
+            border: 1px solid #22d3ee;
+            color: #02101a;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .solid-button:hover {
+            background: #a5f3fc;
+            border-color: #a5f3fc;
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Skills */
         .skill-tag {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: #c0c0d0;
             transition: all 0.3s ease;
-            cursor: pointer; /* Added cursor */
+            cursor: pointer;
         }
         .skill-tag:hover {
-            /* === CHANGED: Accent color to cyan === */
             background: rgba(34, 211, 238, 0.2);
             border-color: rgba(34, 211, 238, 0.5);
             color: #a5f3fc;
         }
         
-        /* Project card 3D tilt */
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            color: #22d3ee;
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        /* Tech Stack Grid Items */
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .tech-item:hover {
+            background: rgba(34, 211, 238, 0.1);
+            border-color: rgba(34, 211, 238, 0.3);
+            transform: translateY(-5px);
+        }
+        .tech-item svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .tech-item:hover svg {
+            transform: scale(1.1);
+        }
+
+        /* Project Cards */
         .project-card {
             transform-style: preserve-3d;
             transform: perspective(1000px);
-            cursor: pointer; /* Added cursor */
+            cursor: pointer;
         }
         .project-card-inner {
             transition: transform 0.1s ease-out;
@@ -177,104 +212,75 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         }
 
-        /* === NEW CSS FOR DETAILED PROJECT CARDS === */
         .project-top-tag {
             display: inline-block;
             position: absolute;
             top: 20px;
             right: 20px;
-            font-size: 0.75rem; /* text-xs */
+            font-size: 0.75rem;
             font-weight: 600;
             padding: 4px 10px;
-            border-radius: 9999px; /* rounded-full */
-            background: rgba(34, 211, 238, 0.2);
+            border-radius: 9999px;
+            background: rgba(0, 0, 0, 0.6); 
             border: 1px solid rgba(34, 211, 238, 0.5);
             color: #a5f3fc;
+            z-index: 10;
         }
-        .project-icon-wrapper {
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .project-icon-wrapper svg {
-            width: 50px;
-            height: 50px;
-            color: #22d3ee;
-            opacity: 0.7;
-        }
+
         .project-feature-list {
             list-style: none;
             padding-left: 0;
-            margin-bottom: 1.5rem; /* mb-6 */
+            margin-bottom: 1.5rem;
             text-align: left;
-            font-size: 0.95rem; /* A bit smaller */
+            font-size: 0.95rem;
             color: #c0c0d0;
         }
         .project-feature-list li {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 0.75rem; /* mb-3 */
+            margin-bottom: 0.75rem;
         }
         .project-feature-list svg {
             flex-shrink: 0;
             width: 18px;
             height: 18px;
-            color: #22d3ee; /* Cyan checkmark */
-            margin-right: 0.75rem; /* mr-3 */
+            color: #22d3ee;
+            margin-right: 0.75rem;
             margin-top: 3px;
         }
         
-        /* === NEW CSS FOR SOLID BUTTON === */
-        .solid-button {
-            background: #22d3ee; /* Solid cyan */
-            border: 1px solid #22d3ee;
-            color: #02101a; /* Dark text */
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer; /* Added cursor */
-            /* REMOVED: transform: translateZ(0); */
-        }
-        .solid-button:hover {
-            background: #a5f3fc; /* Lighter cyan */
-            border-color: #a5f3fc;
-            box-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
-            transform: translateY(-2px);
-        }
-        /* --- End of new CSS --- */
-
-        /* === NEW: Fix for clickable buttons === */
         .project-button-container {
-            /* This lifts the buttons in 3D space so they are "on top" of the transforming panel */
             transform: translateZ(30px);
         }
 
-        /* === NEW CSS FOR SKILL ICONS === */
-        .skill-icon {
-            width: 40px;
-            height: 40px;
-            color: #22d3ee;
-            opacity: 0.7;
-            margin-bottom: 1rem;
-        }
-
-        /* New CSS for About Image */
+        /* About Image - FIXED CENTERING */
         .about-image-wrapper {
             width: 250px;
             height: 250px;
+            /* These margins ensure centering within the grid column */
             margin-left: auto;
-            margin-right: auto; /* Center on all screens */
-            border-radius: 50%; /* Circular */
+            margin-right: auto;
+            border-radius: 50%;
             overflow: hidden;
-            /* === CHANGED: Accent color to cyan === */
-            border: 4px solid rgba(34, 211, 238, 0.5); /* Cyan border */
+            border: 4px solid rgba(34, 211, 238, 0.5);
             box-shadow: 0 0 25px rgba(34, 211, 238, 0.4);
             transition: all 0.3s ease;
+            /* Additional flex centering just in case */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .about-image-wrapper:hover {
             transform: scale(1.05);
-            /* === CHANGED: Accent color to cyan === */
             box-shadow: 0 0 40px rgba(34, 211, 238, 0.6);
         }
         .about-image {
@@ -284,7 +290,7 @@
         }
     </style>
 </head>
-<body class="selection:bg-cyan-500 selection:text-white"> <!-- CHANGED: Selection color -->
+<body class="selection:bg-cyan-500 selection:text-white">
 
     <!-- 3D Background Canvas -->
     <canvas id="bg-canvas"></canvas>
@@ -292,37 +298,33 @@
     <!-- Header Navigation -->
     <nav class="glass-nav fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo / Name -->
             <a href="#home" class="text-2xl font-bold text-white tracking-tight">
-                Prince Kumar <span class="text-cyan-400">.</span> <!-- CHANGED: Accent color -->
+                Prince Kumar <span class="text-cyan-400">.</span>
             </a>
             
-            <!-- Navigation Links -->
             <div class="hidden md:flex space-x-8" id="nav-links">
                 <a href="#home" class="nav-link active">HOME</a>
                 <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#technologies" class="nav-link">TECH</a>
                 <a href="#skills" class="nav-link">SKILLS</a>
                 <a href="#project" class="nav-link">PROJECTS</a>
-                <!-- === ADDED: GitHub Nav Link === -->
                 <a href="#github" class="nav-link">GITHUB</a>
                 <a href="#contact" class="nav-link">CONTACT</a>
             </div>
             
-            <!-- Mobile Menu Button (Optional, but good practice) -->
             <button class="md:hidden text-white" id="mobile-menu-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
         </div>
-        <!-- Mobile Menu (Hidden by default) -->
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center" id="mobile-nav-links">
                 <a href="#home" class="nav-link active block w-full text-center py-2">HOME</a>
                 <a href="#about" class="nav-link block w-full text-center py-2">ABOUT</a>
+                <a href="#technologies" class="nav-link block w-full text-center py-2">TECH</a>
                 <a href="#skills" class="nav-link block w-full text-center py-2">SKILLS</a>
                 <a href="#project" class="nav-link block w-full text-center py-2">PROJECTS</a>
-                <!-- === ADDED: GitHub Nav Link === -->
                 <a href="#github" class="nav-link block w-full text-center py-2">GITHUB</a>
                 <a href="#contact" class="nav-link block w-full text-center py-2">CONTACT</a>
             </div>
@@ -337,23 +339,30 @@
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-4">
                 Hi, I'm Prince
             </h1>
-            <h2 class="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-8"> <!-- CHANGED: Gradient color -->
+            <h2 class="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 mb-8">
                 Software Development Engineer
             </h2>
             <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
-            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
                 I build high-performance, scalable, and intuitive digital experiences from concept to deployment.
             </p>
-            <!-- === UPDATED: Button container === -->
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="#project" class="glass-button rounded-full py-3 px-8 text-lg inline-block">
                     View My Work
                 </a>
-                <!-- === ADDED: Resume Button === -->
-                <!-- === REPLACE 'resume.pdf' WITH YOUR ACTUAL RESUME LINK === -->
-                <a href="https://drive.google.com/file/d/1Us3SEMBaO6mvZI5JDfWfgPa0omT2qEGU/view?usp=sharing" target="_blank" class="glass-button rounded-full py-3 px-8 text-lg inline-block">
+                
+                <!-- === UPDATED: Resume Button (View + Download) === -->
+                <!-- This setup forces download via JS click while opening tab with href -->
+                <a href="./file/prince_Kumar_Resume (1).pdf" 
+                   target="_blank"
+                   onclick="const a = document.createElement('a'); a.href=this.href; a.download='Prince_Kumar_Resume.pdf'; document.body.appendChild(a); a.click(); document.body.removeChild(a);"
+                   class="glass-button rounded-full py-3 px-8 text-lg inline-block">
                     View Resume
                 </a>
+                
+                <a href="https://github.com/prncenium" target="_blank" class="glass-button rounded-full py-3 px-8 text-lg inline-block">
+                    GitHub
+                </a>
+
                 <a href="#contact" class="glass-button rounded-full py-3 px-8 text-lg inline-block">
                     Get In Touch
                 </a>
@@ -362,27 +371,94 @@
 
         <!-- ===== ABOUT ===== -->
         <section id="about" class="flex items-center justify-center">
-            <div class="glass-panel p-10 md:p-16 max-w-5xl w-full"> <!-- Increased max-width -->
+            <div class="glass-panel p-10 md:p-16 max-w-5xl w-full">
                 <h2 class="text-4xl font-bold text-white mb-10 text-center">About Me</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
-                    <!-- Image Column -->
-                    <div class="md:col-span-1">
+                    <!-- Image Column - Now properly centered -->
+                    <div class="md:col-span-1 flex justify-center">
                         <div class="about-image-wrapper">
-                            <!-- === REPLACE THIS SRC LINK WITH YOUR PHOTO === -->
-                            <img src="./images/1741624394694.jpg" 
+                            <img src="./images/WhatsApp Image 2025-11-19 at 13.51.31_2c13e0f4.jpg" 
                                  alt="A photo of Prince Kumar" 
                                  class="about-image"
                                  onerror="this.src='https://placehold.co/400x400/8a63d2/202030?text=Your+Photo'">
                         </div>
                     </div>
-                    <!-- Text Column -->
                     <div class="md:col-span-2 text-gray-200 text-lg space-y-4 text-left">
                         <p>
                             I'm a Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node.js) and Firebase. With a strong foundation in Data Structures and Algorithms, I'm passionate about solving complex problems and building software that makes a real-world impact.
                         </p>
                         <p>
-                            I thrive in collaborative environments and always eager to learn new technologies. My goal is to leverage my skills to create robust, efficient, and user-friendly applications that scale.
+                            I thrive in collaborative environments and am always eager to learn new technologies. My goal is to leverage my skills to create robust, efficient, and user-friendly applications that scale.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TECHNOLOGIES I WORK WITH ===== -->
+        <section id="technologies" class="flex flex-col items-center justify-center">
+            <h2 class="text-4xl font-bold text-white mb-10 text-center">Technologies I Work With</h2>
+            <div class="glass-panel p-8 md:p-12 max-w-6xl w-full">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-items-center">
+                    <!-- React -->
+                    <div class="tech-item w-full">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#61DAFB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke="#61DAFB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12H12.01" stroke="#61DAFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="text-gray-300 font-medium">React</span>
+                    </div>
+                    <!-- Node.js -->
+                    <div class="tech-item w-full">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2.5 7.5V16.5L12 22L21.5 16.5V7.5L12 2Z" stroke="#68A063" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22V12" stroke="#68A063" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12L21.5 7.5" stroke="#68A063" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12L2.5 7.5" stroke="#68A063" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="text-gray-300 font-medium">Node.js</span>
+                    </div>
+                    <!-- Express -->
+                    <div class="tech-item w-full">
+                        <div class="h-12 flex items-center justify-center"><span class="text-2xl font-bold text-gray-300">ex</span></div>
+                        <span class="text-gray-300 font-medium">Express</span>
+                    </div>
+                    <!-- MongoDB -->
+                    <div class="tech-item w-full">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C12 22 5 16 5 10C5 6.13401 8.13401 3 12 3C15.866 3 19 6.13401 19 10C19 16 12 22 12 22Z" stroke="#4DB33D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 3V22" stroke="#4DB33D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="text-gray-300 font-medium">MongoDB</span>
+                    </div>
+                    <!-- JavaScript -->
+                    <div class="tech-item w-full">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#F7DF1E" stroke-width="1.5"/><path d="M16 17H14.5C13.6716 17 13 16.3284 13 15.5V15.5C13 14.6716 13.6716 14 14.5 14H16" stroke="#F7DF1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 17V12" stroke="#F7DF1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="text-gray-300 font-medium">JavaScript</span>
+                    </div>
+                    <!-- CSS3 -->
+                    <div class="tech-item w-full">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 3L5.5 19L12 21L18.5 19L20 3H4Z" stroke="#264DE4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 7H8" stroke="#264DE4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 11H15.5L15 15L12 16L9 15L8.5 13" stroke="#264DE4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="text-gray-300 font-medium">CSS3</span>
+                    </div>
+                    <!-- Tailwind -->
+                    <div class="tech-item w-full">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 12C17 12 15 12 14 10C13 8 14 6 16 5C18 4 20 6 20 8C20 10 18 12 17 12Z" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 18C8 18 6 18 5 16C4 14 5 12 7 11C9 10 11 12 11 14C11 16 9 18 8 18Z" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 13C13 13 11 13 10 11C9 9 10 7 12 6C14 5 16 7 16 9C16 11 14 13 13 13Z" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="text-gray-300 font-medium">Tailwind</span>
+                    </div>
+                    <!-- Firebase -->
+                    <div class="tech-item w-full">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22L4.5 9L8 3L12 12" stroke="#FFCA28" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22L19.5 9L16 3L12 12" stroke="#FFCA28" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12L12 22" stroke="#FFCA28" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="text-gray-300 font-medium">Firebase</span>
+                    </div>
+                    <!-- Git -->
+                    <div class="tech-item w-full">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="18" r="2" stroke="#F05032" stroke-width="1.5"/><circle cx="18" cy="6" r="2" stroke="#F05032" stroke-width="1.5"/><path d="M6 16V9C6 7.34315 7.34315 6 9 6H16" stroke="#F05032" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12Z" stroke="#F05032" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="text-gray-300 font-medium">Git</span>
+                    </div>
+                    <!-- VS Code -->
+                    <div class="tech-item w-full">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 12L4 20V4Z" stroke="#007ACC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 9L10 15" stroke="#007ACC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="text-gray-300 font-medium">VS Code</span>
+                    </div>
+                    <!-- Postman -->
+                    <div class="tech-item w-full">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#FF6C37" stroke-width="1.5"/><path d="M8 12C8 12 10 14 12 14C14 14 16 12 16 12" stroke="#FF6C37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8V8.01" stroke="#FF6C37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="text-gray-300 font-medium">Postman</span>
+                    </div>
+                    <!-- HTML5 -->
+                    <div class="tech-item w-full">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 3L5.5 19L12 21L18.5 19L20 3H4Z" stroke="#E34F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 7H8" stroke="#E34F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 11H16" stroke="#E34F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 15H15.5L15 17L12 18L9 17L8.5 15" stroke="#E34F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="text-gray-300 font-medium">HTML5</span>
                     </div>
                 </div>
             </div>
@@ -391,12 +467,10 @@
         <!-- ===== SKILLS ===== -->
         <section id="skills">
             <h2 class="text-4xl font-bold text-white mb-10 text-center">Skills & Toolkit</h2>
-            <!-- New 4-block grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 <!-- Block 1: Frontend -->
                 <div class="glass-panel p-8 rounded-3xl">
-                    <!-- Icon: Desktop -->
                     <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-1.621-.621A3 3 0 0 1 15 18.257V17.25m-6-12V3.75A2.25 2.25 0 0 1 7.5 1.5h9A2.25 2.25 0 0 1 18.75 3.75v1.5m-6 0h-3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h3.375m0-13.5h9.375c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-9.375m0-13.5Z" />
                     </svg>
@@ -414,7 +488,6 @@
 
                 <!-- Block 2: Backend -->
                 <div class="glass-panel p-8 rounded-3xl">
-                    <!-- Icon: Gear/Cog -->
                     <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9.804 3.75a.75.75 0 0 1 .75-.75h3.692a.75.75 0 0 1 .75.75v.008c.011.02.019.042.026.065.084.28.148.568.194.865.044.285.068.578.074.88.005.23.007.46.007.69v.006c0 .22-.002.44-.006.66a.75.75 0 0 1-.745.746c-.22.004-.44.006-.66.006s-.44-.002-.66-.006a.75.75 0 0 1-.746-.746c-.004-.22-.006-.44-.006-.66v-.006c0-.23.002-.46.007-.69.006-.302.03-.595.074-.88.046-.297.11-.585.194-.865.007-.023.015-.045.026-.065V3.75Zm0 0c0-1.05.84-1.9 1.875-1.9h1.05c1.035 0 1.875.85 1.875 1.9V4.5c0 1.05-.84 1.9-1.875 1.9h-1.05c-1.035 0-1.875-.85-1.875-1.9V3.75Z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M11.85 7.5a.75.75 0 0 1 .375.63V9a.75.75 0 0 1-1.5 0V8.13a.75.75 0 0 1 .375-.63ZM12 18.75a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" />
@@ -441,7 +514,6 @@
 
                 <!-- Block 3: Database & Tools -->
                 <div class="glass-panel p-8 rounded-3xl">
-                    <!-- Icon: Toolkit/Box -->
                     <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
                     </svg>
@@ -459,10 +531,9 @@
 
                 <!-- Block 4: Additional Skills -->
                 <div class="glass-panel p-8 rounded-3xl">
-                    <!-- Icon: Rocket -->
                     <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.23 6 6 0 0 1-5.84-7.23l.114-.319a.75.75 0 0 1 1.191.037l.08.213a.75.75 0 0 0 1.191-.037l.112-.318a.75.75 0 0 1 1.19-.038l.08.214a.75.75 0 0 0 1.19-.038l.115-.318a.75.75 0 0 1 1.19-.038l.08.214a.75.75 0 0 0 1.19-.038l.115-.318Z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12.965 4.37a.75.75 0 0 1-1.19 0l-.115-.318a.75.75 0 0 0-1.19.038l-.08.214a.75.75 0 0 1-1.19.038l-.115-.318a.75.75 0 0 0-1.19.038l-.08.214a.75.75 0 0 1-1.19.038l-.115-.318a.75.75 0 0 0-1.19.038l-.08.214a.75.75 0 0 1-1.19.038l.08.214a.75.75 0 0 0 1.19.038l.115-.318a.75.75 0 0 1 1.19-.038l.08.214a.75.75 0 0 0 1.19.038l.115-.318a.75.75 0 0 1 1.19-.038l.08.214a.75.75 0 0 0 1.19.038l.115-.318a.75.75 0 0 1 1.19.038l.114.318a.75.75 0 0 0 1.191-.038l.08-.213a.75.75 0 0 1 1.191.037l.114.319a.75.75 0 0 0 1.19.038l.08-.214a.75.75 0 0 1 1.19.038l.115.318a.75.75 0 0 0 1.19.038l.08-.214a.75.75 0 0 1 1.19.038l.115.318a.75.75 0 0 0 1.19.038l.08-.214a.75.75 0 0 1 1.19.038Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12.965 4.37a.75.75 0 0 1-1.19 0l-.115-.318a.75.75 0 0 0-1.19.038l-.08.214a.75.75 0 0 1-1.19.038l-.115-.318a.75.75 0 0 0-1.19.038l-.08.214a.75.75 0 0 1-1.19.038l.08.214a.75.75 0 0 0 1.19.038l.115-.318a.75.75 0 0 1 1.19-.038l.08.214a.75.75 0 0 0 1.19.038l.115.318a.75.75 0 0 0 1.19.038l.08-.214a.75.75 0 0 1 1.19.038Z" />
                     </svg>
                     <h3 class="text-2xl font-semibold text-cyan-300 mb-4">Additional Skills</h3>
                     <div class="flex flex-wrap gap-3">
@@ -480,22 +551,21 @@
         <!-- ===== PROJECTS ===== -->
         <section id="project">
             <h2 class="text-4xl font-bold text-white mb-10 text-center">Projects</h2>
-            <!-- CHANGED: grid-cols-2 to handle 3 projects effectively if needed, or just let them flow -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 <!-- Project 1: Finance App -->
                 <div class="project-card glass-panel"> 
                     <div class="project-card-inner p-8 relative"> 
                         <span class="project-top-tag">MERN STACK</span>
-                        <div class="project-icon-wrapper">
-                            <!-- Placeholder Icon: Finance -->
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5S4.67 4.5 5.25 5.25m5.985-1.5a13.5 13.5 0 0 1 5.032 0M17.25 4.5s-.92 0-1.5.75M3 13.5c0 1.282.67 2.417 1.683 3.024M11.25 3.75zM16.5 3.75c.621 0 1.125.504 1.125 1.125v13.5A1.125 1.125 0 0 1 16.5 19.5h-12A1.125 1.125 0 0 1 3.375 18.375V4.875C3.375 4.254 3.879 3.75 4.5 3.75h12zM10.5 16.5c0-1.657 1.343-3 3-3s3 1.343 3 3m-3-10.5c0-1.657-1.343-3-3-3s-3 1.343-3 3m3 10.5a.75.75 0 0 0 .75-.75V11.25a.75.75 0 0 0-1.5 0v4.5a.75.75 0 0 0 .75.75z" />
-                            </svg>
-                        </div>
+                        
+                        <!-- === UPDATED: Real Image for Finance App === -->
+                        <img src="./images/Finance.png" 
+                             alt="Personal Finance App Landing Page" 
+                             class="project-image"
+                             onerror="this.src='https://placehold.co/600x300/1e293b/38bdf8?text=Finance+App+Preview'">
+
                         <h3 class="text-2xl font-bold text-white mb-3 text-center">Personal Finance App</h3>
                         
-                        <!-- Feature List -->
                         <ul class="project-feature-list">
                             <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" /></svg>
                                 Full-stack MERN with expense tracking & budgeting.
@@ -525,12 +595,13 @@
                 <div class="project-card glass-panel"> 
                     <div class="project-card-inner p-8 relative">
                         <span class="project-top-tag">REACT & REDUX</span>
-                        <div class="project-icon-wrapper">
-                            <!-- Icon: Shopping Bag / Food -->
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                            </svg>
-                        </div>
+                        
+                        <!-- === UPDATED: Real Image for Swiggy Clone === -->
+                        <img src="./images/Swiggy.png" 
+                             alt="Swiggy Clone Landing Page" 
+                             class="project-image"
+                             onerror="this.src='https://placehold.co/600x300/ea580c/ffffff?text=Swiggy+Clone+Preview'">
+
                         <h3 class="text-2xl font-bold text-white mb-3 text-center">Swiggy Clone WebApp</h3>
                         
                         <ul class="project-feature-list">
@@ -559,16 +630,16 @@
                 </div>
                 
                 <!-- Project 3: AI ChatBot -->
-                <div class="project-card glass-panel"> <!-- REMOVED overflow-hidden -->
+                <div class="project-card glass-panel"> 
                     <div class="project-card-inner p-8 relative">
                         <span class="project-top-tag">JAVASCRIPT</span>
-                        <div class="project-icon-wrapper">
-                            <!-- Placeholder Icon: Chat -->
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-3.86 8.25-8.625 8.25a8.62 8.62 0 0 1-4.4-1.256.375.375 0 0 1-.182-.328V16.5a1.875 1.875 0 0 1 .502-1.252A5.992 5.992 0 0 0 12.375 12H21Z" />
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M3 15.75a8.62 8.62 0 0 1 4.4-1.256 5.993 5.993 0 0 0 4.5-1.928A5.993 5.993 0 0 0 16.5 12H3m18-3.75a8.62 8.62 0 0 0-4.4-1.256 5.993 5.993 0 0 0-4.5-1.928A5.993 5.993 0 0 0 7.5 7.5H3m18 0c0-4.556-3.86-8.25-8.625-8.25S3 3.194 3 7.5m18 0v.008Z" />
-                            </svg>
-                        </div>
+                        
+                        <!-- === UPDATED: Real Image for Chatbot === -->
+                        <img src="./images/Chatbot.png" 
+                             alt="Chatbot Landing Page" 
+                             class="project-image"
+                             onerror="this.src='https://placehold.co/600x300/0f172a/38bdf8?text=AI+Chatbot+Preview'">
+
                         <h3 class="text-2xl font-bold text-white mb-3 text-center">General WebApp ChatBot</h3>
                         
                         <ul class="project-feature-list">
@@ -595,21 +666,29 @@
                     </div>
                 </div>
 
-                <!-- Removed Project 4: Memory Game -->
-
             </div>
         </section>
 
-        <!-- === ADDED: GITHUB STATS SECTION === -->
+        <!-- === UPDATED: GITHUB STATS SECTION === -->
         <section id="github" class="pt-0 md:pt-10">
             <h2 class="text-4xl font-bold text-white mb-10 text-center">GitHub Stats</h2>
             <div class="glass-panel p-6 md:p-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center items-center">
-                    <img src="https://github-readme-stats.vercel.app/api?username=prncenium&show_icons=true&theme=tokyonight&bg_color=00000000&text_color=f0f0f0&icon_color=22d3ee&title_color=22d3ee" 
+                <div class="flex flex-col lg:flex-row gap-8 justify-center items-center">
+                    <!-- Main Stats -->
+                    <!-- Attempt 3: Trying 'default' theme if tokyonight is failing -->
+                    <img src="https://github-readme-stats.vercel.app/api?username=prncenium&show_icons=true&theme=dark&count_private=true&include_all_commits=true&hide_border=true" 
                          alt="prncenium's GitHub Stats" 
                          class="w-full max-w-md"/>
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=prncenium&layout=compact&theme=tokyonight&bg_color=00000000&text_color=f0f0f0" 
+                    
+                    <!-- Languages -->
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=prncenium&layout=compact&theme=dark&hide_border=true" 
                          alt="Top Languages" 
+                         class="w-full max-w-md"/>
+                </div>
+                <!-- Streak Card -->
+                <div class="flex justify-center mt-8">
+                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=prncenium&theme=dark&hide_border=true" 
+                         alt="GitHub Streak"
                          class="w-full max-w-md"/>
                 </div>
             </div>
@@ -622,12 +701,10 @@
                 <p class="text-lg text-gray-300 mb-8 max-w-md mx-auto">
                     My inbox is always open. Whether you have a question, a project proposal, or just want to say hi, feel free to reach out.
                 </p>
-                <!-- === UPDATED: Contact Buttons === -->
                 <div class="flex flex-wrap justify-center gap-4">
                     <a href="mailto:princecsk666@gmail.com" class="glass-button rounded-full py-3 px-8 text-lg inline-block">
                         Email Me
                     </a>
-                    <!-- === ADDED: LinkedIn Button === -->
                     <a href="https://linkedin.com/in/prince-kumar-9525a121b" target="_blank" class="glass-button rounded-full py-3 px-8 text-lg inline-block">
                         LinkedIn
                     </a>
@@ -660,24 +737,19 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-            /* === CHANGED: 3D Model === */
-            // Geometry (a techy crystal shape)
-            const geometry = new THREE.IcosahedronGeometry(1.8, 0); // Size 1.8, 0 subdivisions
+            const geometry = new THREE.IcosahedronGeometry(1.8, 0);
             
-            // Material (a wireframe glass material)
             const material = new THREE.MeshBasicMaterial({
-                color: 0x22d3ee, // New Cyan color
+                color: 0x22d3ee,
                 wireframe: true,
                 transparent: true,
-                opacity: 0.5 // Make it a bit more subtle
+                opacity: 0.5
             });
 
             mesh = new THREE.Mesh(geometry, material);
             scene.add(mesh);
 
-            // Handle window resize
             window.addEventListener('resize', onWindowResize, false);
-            // Handle mouse move for parallax
             window.addEventListener('mousemove', onMouseMove, false);
             
             animate();
@@ -690,30 +762,22 @@
         }
 
         function onMouseMove(event) {
-            // Normalize mouse position from -1 to 1
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
             mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
         }
 
         function animate() {
             requestAnimationFrame(animate);
-
-            // Slow rotation
             mesh.rotation.x += 0.001;
             mesh.rotation.y += 0.002;
-
-            // Parallax effect: move camera based on mouse
-            // Use lerp for smooth camera movement
             camera.position.x += (mouse.x * 0.5 - camera.position.x) * 0.02;
             camera.position.y += (mouse.y * 0.5 - camera.position.y) * 0.02;
             camera.lookAt(scene.position);
-
             renderer.render(scene, camera);
         }
 
         init3D();
 
-        // --- ACTIVE NAV LINK HIGHLIGHTING ---
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('#nav-links a, #mobile-nav-links a');
 
@@ -725,13 +789,12 @@
                     });
                 }
             });
-        }, { rootMargin: '-30% 0px -70% 0px' }); // Trigger when section is in the middle 30% of the viewport
+        }, { rootMargin: '-30% 0px -70% 0px' });
 
         sections.forEach(section => {
             observer.observe(section);
         });
         
-        // --- MOBILE MENU TOGGLE ---
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -739,19 +802,17 @@
             mobileMenu.classList.toggle('hidden');
         });
         
-        // Close mobile menu when a link is clicked
         document.querySelectorAll('#mobile-nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
 
-        // --- 3D PROJECT CARD TILT ---
         const projectCards = document.querySelectorAll('.project-card');
 
         projectCards.forEach(card => {
             const cardInner = card.querySelector('.project-card-inner');
-            const maxTilt = 10; // Max tilt in degrees
+            const maxTilt = 10;
 
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
