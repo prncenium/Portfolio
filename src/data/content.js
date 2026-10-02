@@ -9,7 +9,7 @@ export const profile = {
   phone: '+91-8700853293',
   github: 'https://github.com/prncenium',
   linkedin: 'https://linkedin.com/in/prince-kumar-9525a121b',
-  resume: '/file/prince_Kumar_Resume.pdf',
+  resume: 'https://drive.google.com/file/d/1I9qPjP-v-34iXliQ5q22Z058xpwp9m4x/view?usp=sharing',
   avatar: '/images/Profile.jpeg',
   stats: [
     { label: 'Internships', value: '2+', desc: 'Software development roles at Web Accuracy & ReverseClinics' },
