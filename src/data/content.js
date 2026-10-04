@@ -149,8 +149,14 @@ export const projects = [
       'Added live animations and loading skeletons for a smooth, app-like user experience',
     ],
     tags: ['React', 'Vite', 'JavaScript', 'Redux Toolkit', 'CSS3', 'Node.js', 'Firebase'],
+    video: 'https://res.cloudinary.com/gitn9iob/video/upload/v1791136011/nutrivid.mp4',
+    gallery: [
+      'https://res.cloudinary.com/gitn9iob/image/upload/v1791137529/Screenshot_2026-10-04_234053.png',
+      'https://res.cloudinary.com/gitn9iob/image/upload/v1791137529/Screenshot_2026-10-04_234131.png',
+      'https://res.cloudinary.com/gitn9iob/image/upload/v1791137529/Screenshot_2026-10-04_234145.png',
+    ],
     live: 'https://jhalak-fresh.vercel.app/',
-    code: 'https://github.com/prncenium/Swiggy_Clone_WebApp',
+    code: 'https://github.com/prncenium/JhalakFresh',
   },
   {
     id: 'operationcost',
@@ -169,8 +175,14 @@ export const projects = [
       'Designed a clean, responsive React UI for seamless booking flows and real-time status updates',
     ],
     tags: ['MongoDB', 'Express.js', 'React', 'Node.js', 'JWT', 'bcrypt.js', 'Mongoose'],
+    video: 'https://res.cloudinary.com/gitn9iob/video/upload/v1791136010/OperationCost_Vid.mp4',
+    gallery: [
+      'https://res.cloudinary.com/gitn9iob/image/upload/v1791138012/Screenshot_2026-10-04_234955.png',
+      'https://res.cloudinary.com/gitn9iob/image/upload/v1791138012/Screenshot_2026-10-04_234939.png',
+      'https://res.cloudinary.com/gitn9iob/image/upload/v1791138018/Screenshot_2026-10-04_234907.png',
+    ],
     live: 'https://opration-cost.vercel.app/',
-    code: 'https://github.com/prncenium',
+    code: 'https://github.com/prncenium/OprationCost',
   },
   {
     id: 'aicaption',
@@ -189,8 +201,14 @@ export const projects = [
       'Implemented one-click video export with embedded captions, supporting multiple video formats',
     ],
     tags: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Groq AI', 'FFmpeg', 'Framer Motion'],
+    video: 'https://res.cloudinary.com/gitn9iob/video/upload/v1791136011/Vartalab_Ai_vid.mp4',
+    gallery: [
+      'https://res.cloudinary.com/gitn9iob/image/upload/v1791138257/Screenshot_2026-10-04_235311.png',
+      'https://res.cloudinary.com/gitn9iob/image/upload/v1791138244/Screenshot_2026-10-04_235331.png',
+      'https://res.cloudinary.com/gitn9iob/image/upload/v1791138244/Screenshot_2026-10-04_235341.png',
+    ],
     live: 'https://vartalabai.vercel.app/',
-    code: 'https://github.com/prncenium',
+    code: 'https://github.com/prncenium/CaptionCrow',
   },
 ];
 
