@@ -137,7 +137,7 @@ export const projects = [
     title: 'NutriFresh',
     role: 'Frontend-heavy Full Stack App · Personal Project',
     badge: 'React & Redux',
-    image: 'https://res.cloudinary.com/dbtfi1rbi/image/upload/v1782394626/Screenshot_2026-06-25_190522_aeh47z.png',
+    image: 'https://res.cloudinary.com/gitn9iob/image/upload/v1791132706/Screenshot_2026-10-04_221642.png',
     summary:
       'A Swiggy-style food ordering app with real-time menu data via a custom API proxy. Built a scalable React/Redux frontend with live animations and persistent user sessions via Firebase auth.',
     description:
@@ -157,7 +157,7 @@ export const projects = [
     title: 'OperationCost',
     role: 'Full Stack Web App · MERN Stack',
     badge: 'MERN Stack',
-    image: 'https://res.cloudinary.com/dbtfi1rbi/image/upload/v1782984254/Screenshot_2026-07-02_145313_bqnz0i.png',
+    image: 'https://res.cloudinary.com/gitn9iob/image/upload/v1791132705/Screenshot_2026-10-04_221714.png',
     summary:
       'A full-stack doctor & hospital booking platform with a secure RESTful API, JWT/bcrypt auth, and an interactive MongoDB-backed dashboard for managing bookings efficiently.',
     description:
@@ -177,7 +177,7 @@ export const projects = [
     title: 'VartalabAI — Caption App',
     role: 'AI-Powered Web App · MERN + Groq AI',
     badge: 'AI / MERN',
-    image: 'https://res.cloudinary.com/dbtfi1rbi/image/upload/v1782395110/09ab0d1e-a2fc-4d68-a926-90b4c4ebd75b.png',
+    image: 'https://res.cloudinary.com/gitn9iob/image/upload/v1791132703/Screenshot_2026-10-04_221733.png',
     summary:
       'An AI-powered video captioning tool using Groq AI and FFmpeg for real-time transcription with frame-accurate rendering, and a Framer Motion caption editor with live video preview.',
     description:
